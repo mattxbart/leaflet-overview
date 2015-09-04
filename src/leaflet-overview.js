@@ -1,3 +1,4 @@
+console.log('test')
 L.Control.Overview = L.Control.extend({
   options: {
     position: 'bottomright'
@@ -31,7 +32,7 @@ L.Control.Overview = L.Control.extend({
   _initLayout: function() {
     var container = this._container = L.DomUtil.create('div', 'leaflet-control-overview'), 
         mapDiv    = L.DomUtil.create('div', 'leaflet-control-overview-map', container);
-    
+
     var overview = this._overview = new L.Map(mapDiv, {
       layers:             [this._currentBaseLayer],
       dragging:           false,
