@@ -1,4 +1,4 @@
-console.log('test')
+
 L.Control.Overview = L.Control.extend({
   options: {
     position: 'bottomright'
@@ -41,10 +41,12 @@ L.Control.Overview = L.Control.extend({
       doubleClickZoom:    false,
       boxZoom:            false,
       zoomControl:        false,
-      attributionControl: false
+      attributionControl: false,
+      maxZoom: this._currentBaseLayer.maxZoom,
+      minZoom: this._currentBaseLayer.minZoom,
     });
     
-    var rectangle = this._rectangle = new L.Rectangle(this._map.getBounds(), {weight: 2, clickable: false, color: '#4183c4'});
+    var rectangle = this._rectangle = new L.Rectangle(this._map.getBounds(), {weight: 4, clickable: false, color: '#FF0000'});
     overview.addLayer(rectangle);
       
     setTimeout(function() { overview.invalidateSize(); });  // hack
